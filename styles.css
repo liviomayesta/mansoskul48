@@ -341,6 +341,45 @@ button:hover {
   gap: 18px;
 }
 
+.dictionary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.dictionary-card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(252, 247, 240, 0.92));
+}
+
+.dictionary-card h4 {
+  margin: 8px 0 12px;
+  font-size: 1.12rem;
+  line-height: 1.45;
+}
+
+.dictionary-list {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.dictionary-note {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(15, 118, 110, 0.08);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
 .competency-item h4,
 .checklist-card h4,
 .essay-card h4,
@@ -610,6 +649,7 @@ body.presentation-mode .content > section.active-slide {
   .grid.three,
   .grid.two,
   .competency-board,
+  .dictionary-grid,
   .timeline,
   .framework-grid,
   .cover,
@@ -639,6 +679,7 @@ body.presentation-mode .content > section.active-slide {
   .grid.three,
   .grid.two,
   .competency-board,
+  .dictionary-grid,
   .timeline,
   .framework-grid,
   .peak-layout,
