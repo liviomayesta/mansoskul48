@@ -348,6 +348,14 @@ button:hover {
   margin-top: 18px;
 }
 
+.assessor-grid,
+.sample-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
 .dictionary-card {
   padding: 22px;
   border: 1px solid var(--line);
@@ -356,10 +364,28 @@ button:hover {
     linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(252, 247, 240, 0.92));
 }
 
+.assessor-card,
+.sample-card,
+.cheat-block {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(250, 245, 236, 0.92));
+}
+
 .dictionary-card h4 {
   margin: 8px 0 12px;
   font-size: 1.12rem;
   line-height: 1.45;
+}
+
+.assessor-card h4,
+.sample-card h4,
+.cheat-block h4 {
+  margin: 8px 0 12px;
+  font-size: 1.08rem;
+  line-height: 1.5;
 }
 
 .dictionary-list {
@@ -378,6 +404,31 @@ button:hover {
   background: rgba(15, 118, 110, 0.08);
   color: var(--ink);
   line-height: 1.6;
+}
+
+.assessor-card p,
+.sample-card p,
+.cheat-block p {
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.cheat-sheet-panel {
+  background:
+    radial-gradient(circle at top left, rgba(15, 118, 110, 0.08), transparent 20rem),
+    radial-gradient(circle at bottom right, rgba(242, 184, 75, 0.16), transparent 18rem),
+    rgba(255, 252, 247, 0.92);
+}
+
+.cheat-sheet {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.cheat-block.spotlight {
+  background:
+    linear-gradient(145deg, rgba(15, 118, 110, 0.14), rgba(255, 255, 255, 0.92));
 }
 
 .competency-item h4,
@@ -650,6 +701,9 @@ body.presentation-mode .content > section.active-slide {
   .grid.two,
   .competency-board,
   .dictionary-grid,
+  .assessor-grid,
+  .sample-grid,
+  .cheat-sheet,
   .timeline,
   .framework-grid,
   .cover,
@@ -680,6 +734,9 @@ body.presentation-mode .content > section.active-slide {
   .grid.two,
   .competency-board,
   .dictionary-grid,
+  .assessor-grid,
+  .sample-grid,
+  .cheat-sheet,
   .timeline,
   .framework-grid,
   .peak-layout,
