@@ -412,6 +412,16 @@ function getSlideTitle(section) {
   );
 }
 
+function focusActiveSlide() {
+  const activeSection = slideSections[activeSlideIndex];
+  if (!activeSection) {
+    return;
+  }
+
+  window.scrollTo(0, 0);
+  activeSection.scrollIntoView({ behavior: "auto", block: "start" });
+}
+
 function renderPresentationState() {
   slideSections.forEach((section, index) => {
     section.classList.toggle("active-slide", presentationMode && index === activeSlideIndex);
@@ -432,6 +442,7 @@ function renderPresentationState() {
   presentationNext.textContent =
     activeSlideIndex === slideSections.length - 1 ? "Selesai" : "Berikutnya";
   presentationToggle.textContent = "Keluar Presentasi";
+  requestAnimationFrame(focusActiveSlide);
 }
 
 function setPresentationMode(enabled) {
