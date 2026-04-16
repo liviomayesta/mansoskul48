@@ -1,73 +1,76 @@
+// Pertanyaan PE diambil langsung dari Form PE BPS (Form Data Peak Experiences)
 const essayPrompts = [
   {
-    title: "Integritas dalam pengelolaan data",
+    title: "PE 1 – Integritas: Situasi Bertentangan dengan Nilai & Etika Organisasi",
     prompt:
-      "Ceritakan pengalaman terbaik Anda saat harus menjaga integritas statistik atau kepatuhan proses, walaupun keputusan tersebut berpotensi menimbulkan resistensi atau memperberat pekerjaan tim.",
+      "Dalam Anda melaksanakan tugas pasti pernah mengalami situasi yang bertentangan dengan nilai, norma, dan etika organisasi. Ceritakan pengalaman terbaik Anda ketika berhasil menghadapi situasi tersebut! Jelaskan situasinya seperti apa, kendala yang dihadapi, peran Anda dan hasilnya seperti apa!",
+    kompetensi: "Integritas",
     template:
-      "Situation: Saat itu saya menemukan kondisi yang berpotensi mengganggu integritas data/proses karena...\n\nTask: Peran saya adalah memastikan kepatuhan, kualitas, dan kepentingan organisasi tetap terjaga...\n\nAction: Saya mengklarifikasi fakta, menilai risiko, menjelaskan dasar aturan, lalu mengambil langkah...\n\nResult: Hasil yang dicapai adalah...\n\nReflection: Pengalaman ini menegaskan bahwa pada level Madya saya perlu...",
+      "SITUASI & TUGAS (siapa yang terlibat, konteks lengkap):\nPada saat itu saya menghadapi situasi yang bertentangan dengan nilai/norma organisasi, yaitu...\nPihak yang terlibat: ...\n\nKENDALA:\nKendala utama yang saya hadapi adalah...\n\nLANGKAH YANG SAYA AMBIL (dan alasannya):\nLangkah pertama yang saya ambil adalah... karena...\nLangkah selanjutnya...\n\nHASIL:\nHasil akhir dari kejadian ini adalah...\n\nREFLEKSI (pembelajaran untuk level Madya):\nDari pengalaman ini saya belajar bahwa...",
   },
   {
-    title: "Kerja sama lintas tim",
+    title: "PE 2 – Kerja Sama: Bekerjasama dalam Tim",
     prompt:
-      "Ceritakan pengalaman terbaik Anda ketika berhasil bekerja sama lintas tim atau lintas unit untuk menyelesaikan pekerjaan penting yang awalnya tidak mudah disepakati.",
+      "Sepanjang perjalanan karir Anda pasti pernah bekerjasama dalam sebuah tim. Ceritakan pengalaman terbaik Anda ketika berhasil bekerjasama dalam tim untuk menyelesaikan suatu tugas pekerjaan! Jelaskan situasinya seperti apa, kendala yang dihadapi, peran Anda dan hasilnya seperti apa!",
+    kompetensi: "Kerja Sama",
     template:
-      "Situation: Saya menghadapi pekerjaan yang menuntut kolaborasi antara...\n\nTask: Tanggung jawab saya adalah menyatukan tujuan dan memastikan pekerjaan tetap bergerak...\n\nAction: Saya membangun komunikasi, membagi peran, menjembatani perbedaan, lalu...\n\nResult: Kolaborasi tersebut menghasilkan...\n\nReflection: Hal yang saya pelajari tentang kerja sama strategis adalah...",
+      "SITUASI & TUGAS (siapa yang terlibat, konteks lengkap):\nSaya terlibat dalam sebuah tim untuk menyelesaikan...\nAnggota tim yang terlibat: ...\n\nKENDALA:\nKendala yang saya temui dalam kerja sama tim ini adalah...\n\nLANGKAH YANG SAYA AMBIL (dan alasannya):\nPeran saya dalam tim adalah...\nLangkah yang saya ambil untuk mengatasi kendala...\n\nHASIL:\nHasil kerja sama tim ini adalah...\n\nREFLEKSI:\nPembelajaran yang saya bawa dari pengalaman ini adalah...",
   },
   {
-    title: "Komunikasi yang memengaruhi keputusan",
+    title: "PE 3 – Komunikasi: Menyatakan Pendapat, Ide, dan Argumen",
     prompt:
-      "Ceritakan pengalaman terbaik Anda ketika harus menjelaskan data, ide, atau argumen kepada pihak lain sehingga terjadi perubahan pemahaman, dukungan, atau keputusan.",
+      "Ceritakan pengalaman terbaik Anda ketika berhasil dalam tugas pekerjaan yang menuntut kemampuan untuk berkomunikasi dengan orang lain (menyatakan pendapat, ide/gagasan, argumen, baik secara lisan maupun tertulis)! Jelaskan situasinya seperti apa, kendala yang dihadapi, peran Anda dan hasilnya seperti apa!",
+    kompetensi: "Komunikasi",
     template:
-      "Situation: Saat itu saya perlu menjelaskan isu penting kepada...\n\nTask: Saya harus memastikan pesan saya dipahami dan dapat ditindaklanjuti...\n\nAction: Saya menyusun pesan, memilih media dan bahasa yang tepat, lalu menyampaikan...\n\nResult: Dampak komunikasi tersebut adalah...\n\nReflection: Pengalaman ini memperkuat kemampuan saya dalam...",
+      "SITUASI & TUGAS (siapa yang terlibat, konteks lengkap):\nSaya dihadapkan pada situasi yang menuntut kemampuan komunikasi, yaitu...\nPihak yang perlu saya komunikasikan: ...\n\nKENDALA:\nKendala komunikasi yang saya temui adalah...\n\nLANGKAH YANG SAYA AMBIL (dan alasannya):\nSaya memilih untuk menyampaikan... karena...\nCara/media komunikasi yang saya gunakan: ...\n\nHASIL:\nDampak komunikasi tersebut adalah...\n\nREFLEKSI:\nDari pengalaman ini saya belajar tentang komunikasi yang efektif bahwa...",
   },
   {
-    title: "Menjaga kualitas data dan publikasi",
+    title: "PE 4 – Orientasi Hasil: Menyelesaikan Tugas Sulit dengan Menjaga Kualitas",
     prompt:
-      "Ceritakan pengalaman terbaik Anda saat menjaga kualitas data, publikasi, atau output statistik di tengah tekanan tenggat, keterbatasan sumber daya, atau perbedaan pandangan di tim.",
+      "Ceritakan pengalaman Anda ketika berhasil menyelesaikan tugas dalam situasi yang sulit dengan tetap berpegang pada kualitas hasil dan target kerja! Jelaskan situasinya seperti apa, kendala yang dihadapi, peran Anda dan hasilnya seperti apa!",
+    kompetensi: "Orientasi pada Hasil",
     template:
-      "Situation: Saat itu tim saya menghadapi risiko pada kualitas data/publikasi karena...\n\nTask: Saya bertanggung jawab untuk memastikan output statistik tetap akurat dan tepat waktu...\n\nAction: Saya menelusuri akar masalah, menguatkan penerapan SOP, membagi peran, lalu berkoordinasi dengan pihak terkait untuk...\n\nResult: Dampaknya adalah... (cantumkan angka/perubahan nyata)\n\nReflection: Dari pengalaman itu saya belajar bahwa pada level Madya saya perlu...",
+      "SITUASI & TUGAS (siapa yang terlibat, konteks lengkap):\nSituasi sulit yang saya hadapi adalah...\nTarget kerja yang harus dicapai: ...\nPihak yang terlibat: ...\n\nKENDALA:\nKesulitan yang saya temui adalah...\n\nLANGKAH YANG SAYA AMBIL (dan alasannya):\nUntuk tetap menjaga kualitas dan target, saya mengambil langkah...\n\nHASIL:\nHasil akhir dari penugasan ini adalah... (cantumkan capaian terukur)\n\nREFLEKSI:\nPengalaman ini menunjukkan bahwa pada level Madya saya perlu...",
   },
   {
-    title: "Koordinasi lintas satker atau stakeholder",
+    title: "PE 5 – Pelayanan Publik: Memberikan Pelayanan Terbaik",
     prompt:
-      "Ceritakan pengalaman ketika Anda harus menyatukan BPS provinsi, BPS kabupaten/kota, OPD, atau stakeholder lain yang memiliki kepentingan berbeda agar satu data, layanan statistik, atau program bersama tetap berjalan.",
+      "Ceritakan pengalaman Anda ketika berhasil memberikan pelayanan yang berhubungan dengan tugas Anda sehari-hari. Jelaskan situasinya seperti apa, kendala yang dihadapi, peran Anda dan hasilnya seperti apa!",
+    kompetensi: "Pelayanan Publik",
     template:
-      "Situation: Terdapat perbedaan kebutuhan atau persepsi antara...\n\nTask: Peran saya saat itu adalah menjaga agar koordinasi tetap produktif dan tujuan bersama tercapai...\n\nAction: Saya menyamakan definisi, memfasilitasi diskusi, membagi tindak lanjut, dan...\n\nResult: Kesepakatan yang dicapai menghasilkan...\n\nReflection: Pengalaman ini menunjukkan kemampuan saya dalam...",
+      "SITUASI & TUGAS (siapa yang terlibat, konteks lengkap):\nSituasi pelayanan yang saya hadapi adalah...\nPengguna/pihak yang dilayani: ...\n\nKENDALA:\nKendala dalam memberikan pelayanan: ...\n\nLANGKAH YANG SAYA AMBIL (dan alasannya):\nLangkah yang saya ambil untuk meningkatkan kualitas pelayanan...\n\nHASIL:\nHasil dari pelayanan yang saya berikan adalah...\n\nREFLEKSI:\nDari pengalaman ini saya belajar bahwa pelayanan yang baik membutuhkan...",
   },
   {
-    title: "Pelayanan statistik kepada pengguna",
+    title: "PE 6 – Pengembangan Diri & Orang Lain",
     prompt:
-      "Ceritakan pengalaman ketika Anda berhasil meningkatkan mutu layanan statistik atau respons konsultasi data sehingga pengguna memperoleh manfaat yang lebih baik.",
+      "Ceritakan pengalaman Anda ketika berhasil melakukan pengembangan diri dan juga orang lain yang terkait dengan pekerjaan Anda. Jelaskan situasinya seperti apa, kendala yang Anda hadapi, peran Anda saat itu dan seperti apa hasilnya!",
+    kompetensi: "Pengembangan Diri dan Orang Lain",
     template:
-      "Situation: Pengguna layanan saat itu menghadapi kendala berupa...\n\nTask: Saya bertanggung jawab memastikan layanan tetap responsif, konsisten, dan akuntabel...\n\nAction: Saya memetakan masalah layanan, memperbaiki alur respons, melibatkan tim, lalu...\n\nResult: Perbaikan layanan tersebut menghasilkan...\n\nReflection: Dari pengalaman ini saya belajar bahwa pelayanan publik yang baik membutuhkan...",
+      "SITUASI & TUGAS (siapa yang terlibat, konteks lengkap):\nKonteks pengembangan diri dan orang lain yang saya lakukan: ...\nPihak yang saya bantu kembangkan: ...\n\nKENDALA:\nKendala dalam pengembangan yang saya temui: ...\n\nLANGKAH YANG SAYA AMBIL (dan alasannya):\nUpaya pengembangan diri yang saya lakukan: ...\nCara saya membantu pengembangan orang lain: ...\n\nHASIL:\nHasil pengembangan tersebut terlihat dari...\n\nREFLEKSI:\nHal yang saya pahami tentang pentingnya pengembangan berkelanjutan adalah...",
   },
   {
-    title: "Pengembangan diri dan orang lain",
+    title: "PE 7 – Mengelola Perubahan: Penyesuaian Cepat dalam Tim",
     prompt:
-      "Ceritakan pengalaman ketika Anda berhasil mengembangkan kompetensi diri sekaligus membantu rekan atau tim lain bertumbuh dalam pekerjaan.",
+      "Ceritakan pengalaman keberhasilan Anda ketika dihadapkan pada situasi yang menuntut Anda untuk berubah dengan cepat. Anda dan Tim kerja Anda harus melakukan penyesuaian secara cepat untuk menghadapi tuntutan perubahan tersebut! Jelaskan situasinya seperti apa, kendala yang Anda hadapi, peran Anda saat itu dan seperti apa hasilnya!",
+    kompetensi: "Mengelola Perubahan",
     template:
-      "Situation: Pada saat itu tim/unit saya memerlukan peningkatan kapasitas pada aspek...\n\nTask: Saya mengambil peran untuk belajar, menguasai materi, dan menularkannya kepada tim...\n\nAction: Saya mempelajari hal baru, menyusun materi sederhana, memberi coaching atau pendampingan, lalu...\n\nResult: Hasil pengembangan tersebut terlihat dari...\n\nReflection: Hal yang saya pahami tentang pengembangan orang lain adalah...",
+      "SITUASI & TUGAS (siapa yang terlibat, konteks lengkap):\nPerubahan yang terjadi dan menuntut penyesuaian cepat: ...\nAnggota tim yang terlibat: ...\n\nKENDALA:\nKendala dalam melakukan penyesuaian cepat: ...\n\nLANGKAH YANG SAYA AMBIL (dan alasannya):\nLangkah yang saya ambil untuk memimpin adaptasi tim: ...\n\nHASIL:\nHasil penyesuaian tersebut berdampak pada...\n\nREFLEKSI:\nPengalaman ini menunjukkan kesiapan saya dalam mengelola perubahan karena...",
   },
   {
-    title: "Mengelola perubahan cepat",
+    title: "PE 8 – Pengambilan Keputusan: Memutuskan di Situasi Sulit",
     prompt:
-      "Ceritakan pengalaman saat Anda dan tim harus menyesuaikan diri secara cepat terhadap kebijakan, sistem, atau tuntutan kerja baru dan tetap berhasil menjaga hasil kerja.",
+      "Dalam menyelesaikan tugas sehari-hari tentu Anda pernah bertemu dengan situasi yang menyebabkan Anda harus mengambil keputusan diantara banyak pilihan situasi yang sulit. Ceritakan pengalaman keberhasilan Anda ketika menghadapi situasi tersebut! Jelaskan situasinya seperti apa, kendala yang Anda hadapi, peran Anda saat itu dan seperti apa hasilnya!",
+    kompetensi: "Pengambilan Keputusan",
     template:
-      "Situation: Terjadi perubahan yang menuntut penyesuaian cepat pada...\n\nTask: Saya bertanggung jawab membantu tim beradaptasi sambil menjaga target tetap tercapai...\n\nAction: Saya memetakan dampak perubahan, menyusun prioritas, menjelaskan alasan perubahan, lalu...\n\nResult: Adaptasi tersebut berdampak pada...\n\nReflection: Pengalaman ini menunjukkan kesiapan saya dalam...",
+      "SITUASI & TUGAS (siapa yang terlibat, konteks lengkap):\nSituasi yang mengharuskan saya mengambil keputusan sulit: ...\nAlternatif pilihan yang tersedia: ...\nPihak yang terlibat: ...\n\nKENDALA:\nKesulitan dalam pengambilan keputusan ini: ...\n\nLANGKAH YANG SAYA AMBIL (dan alasannya):\nSaya memutuskan... karena pertimbangan...\nLangkah mitigasi risiko yang saya ambil: ...\n\nHASIL:\nKeputusan tersebut berdampak pada...\n\nREFLEKSI:\nHal yang saya pegang dalam pengambilan keputusan dan akan saya bawa ke peran Madya adalah...",
   },
   {
-    title: "Keputusan sulit yang berintegritas",
+    title: "PE 9 – Perekat Bangsa: Hubungan Harmonis dengan Kolega Beragam",
     prompt:
-      "Ceritakan pengalaman ketika Anda harus mengambil keputusan sulit yang berisiko menimbulkan resistensi, tetapi penting untuk menjaga integritas statistik, akuntabilitas proses, atau kepentingan publik.",
+      "Sepanjang perjalanan karir Anda tentu pernah atau bahkan sering berinteraksi dengan kolega, baik dari internal maupun eksternal organisasi, yang memiliki karakter dan latarbelakang yang beragam baik dari sisi agama, sifat, budaya, ataupun ras. Ceritakan pengalaman keberhasilan Anda dalam membina hubungan yang harmonis ketika bekerja dengan kolega dengan keberagaman tersebut! Jelaskan situasinya seperti apa, kendala yang Anda hadapi, peran Anda saat itu dan seperti apa hasilnya!",
+    kompetensi: "Perekat dan Pemersatu Bangsa",
     template:
-      "Situation: Pada saat itu saya menghadapi kondisi...\n\nTask: Saya harus memastikan bahwa kualitas data, kepatuhan, dan kepentingan organisasi tetap terjaga...\n\nAction: Saya mengumpulkan fakta, menilai risiko, berkonsultasi seperlunya, lalu memutuskan...\n\nResult: Keputusan tersebut berdampak pada...\n\nReflection: Hal yang saya pegang dan akan saya bawa ke peran Madya adalah...",
-  },
-  {
-    title: "Perekat bangsa dalam kerja beragam",
-    prompt:
-      "Ceritakan pengalaman ketika Anda berhasil menjaga hubungan kerja yang harmonis dan produktif dengan rekan atau stakeholder yang memiliki latar belakang sosial, budaya, karakter, atau kepentingan yang beragam.",
-    template:
-      "Situation: Saya bekerja dengan pihak-pihak yang memiliki latar belakang atau kepentingan berbeda, yaitu...\n\nTask: Saya perlu memastikan kerja sama tetap harmonis dan tujuan organisasi tercapai...\n\nAction: Saya membangun rasa hormat, menyesuaikan pendekatan komunikasi, dan...\n\nResult: Hubungan kerja yang terjaga menghasilkan...\n\nReflection: Saya belajar bahwa sensitivitas sosial-kultural penting karena...",
+      "SITUASI & TUGAS (siapa yang terlibat, konteks lengkap):\nSaya bekerja dengan kolega/stakeholder dari latar belakang beragam, yaitu...\nKonteks keberagaman (agama, budaya, karakter): ...\n\nKENDALA:\nKendala dalam menjaga hubungan harmonis: ...\n\nLANGKAH YANG SAYA AMBIL (dan alasannya):\nPendekatan yang saya gunakan untuk membina hubungan harmonis: ...\n\nHASIL:\nHubungan kerja yang terbina menghasilkan...\n\nREFLEKSI:\nSaya belajar bahwa sensitivitas sosial-kultural penting karena...",
   },
 ];
 
@@ -259,7 +262,7 @@ let activeSlideIndex = 0;
 
 function renderEssayPrompt() {
   const selectedPrompt = essayPrompts[essayPromptSelect.selectedIndex];
-  essayPromptText.textContent = selectedPrompt.prompt;
+  essayPromptText.innerHTML = `<span style="display:inline-block;background:#f4a021;color:#fff;border-radius:4px;padding:2px 10px;font-size:0.78rem;font-weight:700;margin-bottom:8px;">Kompetensi: ${selectedPrompt.kompetensi}</span><br>${selectedPrompt.prompt}`;
 }
 
 function renderEssayChecklist(checks) {
