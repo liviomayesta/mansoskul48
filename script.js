@@ -285,12 +285,12 @@ function analyzeEssay() {
       passed: normalized.includes("situation") || normalized.includes("situasi") || normalized.includes("konteks"),
     },
     {
-      label: "Ada peran atau tanggung jawab pribadi.",
-      passed: normalized.includes("task") || normalized.includes("tanggung jawab") || normalized.includes("peran"),
+      label: "Ada tugas, peran, atau deskripsi siapa yang terlibat.",
+      passed: normalized.includes("task") || normalized.includes("tanggung jawab") || normalized.includes("peran") || normalized.includes("tugas") || normalized.includes("terlibat") || normalized.includes("kendala"),
     },
     {
       label: "Ada tindakan yang Anda lakukan.",
-      passed: normalized.includes("action") || normalized.includes("langkah") || normalized.includes("saya melakukan"),
+      passed: normalized.includes("action") || normalized.includes("langkah") || normalized.includes("saya melakukan") || normalized.includes("tindakan"),
     },
     {
       label: "Ada hasil yang terukur atau perubahan nyata.",
@@ -305,7 +305,7 @@ function analyzeEssay() {
     },
     {
       label: "Jawaban cukup kaya dan tidak terlalu singkat.",
-      passed: text.split(/\s+/).filter(Boolean).length >= 120,
+      passed: text.split(/\s+/).filter(Boolean).length >= 80,
     },
   ];
 
@@ -391,13 +391,13 @@ function updateResults() {
     return;
   }
 
-  if (score >= 5) {
+  if (score >= 7) {
     resultSummary.textContent =
       "Cara berpikir Anda sudah dekat dengan ekspektasi level Madya: strategis, kolaboratif, dan tetap menjaga hasil. Ulangi sekali lagi sambil membaca pembahasan setiap soal.";
     return;
   }
 
-  if (score >= 3) {
+  if (score >= 5) {
     resultSummary.textContent =
       "Dasar penilaian Anda sudah cukup baik, tetapi masih perlu memperkuat area integritas, layanan, dan pengelolaan stakeholder. Fokus pada alasan memilih tindakan, bukan hanya tindakannya.";
     return;
