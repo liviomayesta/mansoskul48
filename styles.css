@@ -635,7 +635,7 @@ textarea {
   bottom: 18px;
   transform: translateX(-50%);
   z-index: 20;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
@@ -658,6 +658,10 @@ textarea {
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
+}
+
+body.presentation-mode .presentation-toolbar {
+  display: flex;
 }
 
 body.presentation-mode .sidebar {

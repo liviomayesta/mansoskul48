@@ -431,14 +431,14 @@ function renderPresentationState() {
   });
 
   if (!presentationMode) {
-    presentationToolbar.hidden = true;
+    // toolbar visibility controlled by CSS via body.presentation-mode class
     document.body.classList.remove("presentation-mode");
     presentationToggle.textContent = "Mode Presentasi";
     return;
   }
 
   document.body.classList.add("presentation-mode");
-  presentationToolbar.hidden = false;
+  // toolbar visibility controlled by CSS via body.presentation-mode class
   presentationTitle.textContent = getSlideTitle(slideSections[activeSlideIndex]);
   presentationProgress.textContent = `${activeSlideIndex + 1} / ${slideSections.length}`;
   presentationPrev.disabled = activeSlideIndex === 0;
