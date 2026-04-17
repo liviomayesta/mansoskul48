@@ -50,16 +50,32 @@ body.presentation-mode {
   position: sticky;
   top: 0;
   height: 100vh;
-  padding: 32px 24px;
+  padding: 20px 18px;
   border-right: 1px solid var(--line);
   background: rgba(254, 249, 242, 0.72);
   backdrop-filter: blur(20px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(15, 118, 110, 0.25) transparent;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(15, 118, 110, 0.25);
+  border-radius: 999px;
 }
 
 .brand-block h1 {
-  margin: 8px 0 12px;
-  font-size: clamp(1.75rem, 2.2vw, 2.25rem);
-  line-height: 1.08;
+  margin: 6px 0 8px;
+  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+  line-height: 1.25;
 }
 
 .brand-copy,
@@ -72,7 +88,12 @@ body.presentation-mode {
 .result-panel p,
 .feedback-list li {
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.6;
+  font-size: 0.88rem;
+}
+
+.brand-copy {
+  margin: 0 0 4px;
 }
 
 .eyebrow,
@@ -87,13 +108,14 @@ body.presentation-mode {
 
 .side-nav {
   display: grid;
-  gap: 10px;
-  margin: 28px 0;
+  gap: 5px;
+  margin: 16px 0;
 }
 
 .side-nav a {
-  padding: 12px 14px;
+  padding: 8px 12px;
   border-radius: 999px;
+  font-size: 0.85rem;
   color: var(--ink);
   text-decoration: none;
   background: rgba(255, 255, 255, 0.48);
@@ -116,16 +138,17 @@ body.presentation-mode {
 }
 
 .sidebar-card {
-  padding: 18px;
+  padding: 13px 15px;
   border-radius: var(--radius-md);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(252, 244, 233, 0.8));
+  font-size: 0.83rem;
 }
 
 .sidebar-card ul {
-  margin: 14px 0 0;
-  padding-left: 18px;
+  margin: 10px 0 0;
+  padding-left: 16px;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .content {
@@ -256,10 +279,12 @@ button:hover {
 
 .ghost-button {
   width: 100%;
-  margin-top: 18px;
+  margin-top: 10px;
   background: transparent;
   border-color: var(--line);
   color: var(--ink);
+  padding: 10px 16px;
+  font-size: 0.88rem;
 }
 
 .ghost-button.compact {
