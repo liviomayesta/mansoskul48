@@ -912,25 +912,22 @@
             <div class="prompt-box subtle" id="caseFeedbackText"></div>
           </div>
 
-          <!-- Blok AI Feedback opsional -->
+          <!-- Blok AI Feedback -->
           <article class="essay-card" style="margin-top:18px;" id="aiFeedbackBlock">
             <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:14px;">
               <div>
                 <p class="mini-label" style="margin:0 0 4px;">Opsional</p>
-                <h4 style="margin:0;">Umpan Balik AI (via Groq)</h4>
+                <h4 style="margin:0;">Umpan Balik AI — Asesor Virtual</h4>
               </div>
-              <span class="context-pill" style="margin:0;font-size:0.78rem;">llama-3.3-70b-versatile</span>
+              <span class="context-pill" style="margin:0;font-size:0.78rem;">⚡ Groq · llama-3.3-70b</span>
             </div>
-            <p style="color:var(--muted);margin:0 0 12px;font-size:0.9rem;">Masukkan Groq API Key untuk mendapat umpan balik mendalam dari AI — termasuk analisis kekuatan, area perbaikan, dan saran konkret sesuai konteks BPS.</p>
-            <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-              <input type="password" id="groqApiKey" placeholder="gsk_xxxxxxxxxxxxxxxx" style="flex:1;min-width:200px;margin:0;padding:10px 14px;border-radius:999px;border:1px solid rgba(24,35,41,0.14);background:rgba(255,255,255,0.85);font:inherit;color:var(--ink);" />
-              <button class="primary-button" id="getAIFeedback" type="button" style="white-space:nowrap;">Minta Umpan Balik AI</button>
-            </div>
+            <p style="color:var(--muted);margin:0 0 14px;font-size:0.9rem;">Dapatkan umpan balik mendalam dari AI yang berperan sebagai asesor senior mansoskul BPS — mencakup kekuatan jawaban, area yang perlu diperkuat, dan saran konkret.</p>
+            <button class="primary-button" id="getAIFeedback" type="button">✦ Minta Umpan Balik AI</button>
             <div id="aiFeedbackResult" style="display:none;margin-top:16px;">
               <div class="prompt-box" id="aiFeedbackContent" style="line-height:1.8;"></div>
             </div>
             <div id="aiFeedbackLoading" style="display:none;margin-top:14px;text-align:center;color:var(--muted);font-size:0.9rem;">
-              ⏳ AI sedang menganalisis jawaban Anda...
+              ⏳ AI sedang menganalisis jawaban Anda…
             </div>
           </article>
         </section>

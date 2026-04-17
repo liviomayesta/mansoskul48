@@ -1,3 +1,9 @@
+// ===================== KONFIGURASI API =====================
+// Ganti nilai berikut dengan Groq API Key Anda.
+// Dapatkan key gratis di: https://console.groq.com
+const GROQ_API_KEY = "GANTI_DENGAN_GROQ_API_KEY_ANDA";
+// ===========================================================
+
 // ===================== DATA ANALISIS KASUS =====================
 const caseScenarios = [
   {
@@ -819,14 +825,15 @@ function analyzeCaseEssay() {
 }
 
 async function getAIFeedback() {
-  const apiKey = document.querySelector("#groqApiKey").value.trim();
   const text = caseEssayAnswer.value.trim();
   const scenario = caseScenarios[caseScenarioSelect.selectedIndex];
 
-  if (!apiKey) {
-    alert("Masukkan Groq API Key terlebih dahulu.");
+  if (!GROQ_API_KEY || GROQ_API_KEY === "GANTI_DENGAN_GROQ_API_KEY_ANDA") {
+    aiFeedbackContent.innerHTML = `<strong>API Key belum dikonfigurasi.</strong> Buka <code>script.js</code> dan ganti nilai <code>GROQ_API_KEY</code> di baris paling atas dengan Groq API Key Anda. Dapatkan gratis di <a href="https://console.groq.com" target="_blank">console.groq.com</a>.`;
+    aiFeedbackResult.style.display = "block";
     return;
   }
+
   if (!text || text.split(/\s+/).filter(Boolean).length < 50) {
     alert("Tulis jawaban analisis terlebih dahulu (minimal 50 kata) sebelum meminta umpan balik AI.");
     return;
@@ -865,7 +872,7 @@ Berikan umpan balik yang spesifik dan kontekstual.`;
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${apiKey}`
+        "Authorization": `Bearer ${GROQ_API_KEY}`
       },
       body: JSON.stringify({
         model: "llama-3.3-70b-versatile",
