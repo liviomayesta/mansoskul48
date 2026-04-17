@@ -762,6 +762,10 @@ body.presentation-mode .content > section.active-slide {
   }
 }
 
+input[type="password"] {
+  font: inherit;
+}
+
 @media print {
   body {
     background: #fff;

@@ -1,4 +1,164 @@
-// Pertanyaan PE diambil langsung dari Form PE BPS (Form Data Peak Experiences)
+// ===================== DATA ANALISIS KASUS =====================
+const caseScenarios = [
+  {
+    id: "cs1",
+    title: "Kasus 1 – Krisis Data Menjelang Publikasi",
+    category: "📊 Kualitas Data & Publikasi",
+    duration: "45 menit",
+    background: `BPS Provinsi X dijadwalkan menerbitkan Statistik Daerah dalam dua minggu. Saat verifikasi akhir, Anda menemukan bahwa data dari 3 kabupaten (dari total 7) belum tervalidasi penuh karena petugas penginput data di lapangan diganti mendadak. Data yang ada menunjukkan anomali pada beberapa variabel utama. Sementara itu, pimpinan provinsi sudah mengumumkan jadwal peluncuran ke publik dan media sudah dihubungi. Anda adalah koordinator tim publikasi.`,
+    questions: [
+      "Identifikasi masalah utama dan faktor-faktor yang memperumit situasi ini.",
+      "Susun langkah-langkah konkret yang akan Anda ambil dalam 48 jam pertama.",
+      "Bagaimana Anda mengkomunikasikan situasi ini kepada pimpinan dan pemangku kepentingan eksternal?",
+      "Apa indikator keberhasilan penanganan krisis ini dan pembelajaran ke depan?"
+    ],
+    template: `IDENTIFIKASI MASALAH:
+Masalah utama dalam kasus ini adalah ancaman terhadap kualitas dan integritas data publikasi statistik daerah, yang diperumit oleh tiga faktor: (1) data dari 3 dari 7 kabupaten belum tervalidasi, (2) terdapat anomali pada variabel utama, dan (3) tenggat publikasi sudah dikomunikasikan ke publik.
+
+ANALISIS PENYEBAB:
+Akar masalah bukan sekadar keterlambatan validasi, melainkan kerentanan proses suksesi petugas yang tidak memiliki protokol transfer tanggung jawab yang memadai. Faktor yang memperparah situasi: penggantian petugas mendadak tanpa briefing, tidak adanya buffer waktu validasi dalam jadwal publikasi, dan ketergantungan pada satu titik verifikasi.
+
+USULAN SOLUSI:
+Langkah yang saya ambil: (1) Menghentikan sementara proses finalisasi bagian terdampak, (2) membentuk tim verifikasi darurat yang fokus pada 3 kabupaten bermasalah, (3) menyiapkan dua skenario publikasi — publikasi penuh jika validasi selesai tepat waktu, atau publikasi parsial dengan catatan metodologis yang jelas.
+
+RENCANA IMPLEMENTASI:
+Jam 1-4: Koordinasi dengan kepala tim dan petugas pengganti untuk pemetaan cepat anomali. Hari 1-2: Verifikasi ulang data dengan sumber primer (laporan lapangan, CAWI backup). Hari 3: Rapat pimpinan untuk memilih skenario publikasi dan menetapkan komunikasi eksternal. Hari 4-10: Finalisasi dan review akhir sebelum rilis.
+
+ANTISIPASI RISIKO:
+Risiko utama: tekanan pimpinan untuk tetap menerbitkan sesuai jadwal. Mitigasi: sajikan dua opsi dengan konsekuensi masing-masing secara tertulis kepada pimpinan, agar keputusan terdokumentasi. Risiko kedua: kebocoran informasi ke media sebelum komunikasi resmi — mitigasi dengan briefing singkat kepada tim komunikasi.
+
+INDIKATOR KEBERHASILAN:
+Publikasi akhir memuat data yang tervalidasi penuh, atau bagian yang belum tervalidasi diberi penanda metodologis yang jelas. Tidak ada koreksi data signifikan pasca-publikasi. Prosedur suksesi petugas diperbarui dalam SOP unit dalam 30 hari ke depan.`,
+    keywords: ["masalah", "anomali", "validasi", "tenggat", "risiko", "kualitas", "integritas", "penyebab", "faktor", "verifikasi", "koordinasi", "langkah", "strategi", "tahap", "waktu", "jadwal", "mitigasi", "antisipasi", "dampak", "indikator", "keberhasilan", "reputasi", "pembelajaran", "sop"]
+  },
+  {
+    id: "cs2",
+    title: "Kasus 2 – Konflik Definisi Indikator Lintas Instansi",
+    category: "🤝 Koordinasi Statistik Sektoral",
+    duration: "45 menit",
+    background: `Dalam penyusunan profil pembangunan daerah tahunan, Anda mendapati bahwa tiga instansi menggunakan definisi dan metodologi berbeda untuk mengukur kemiskinan: BPS menggunakan Garis Kemiskinan resmi, Dinas Sosial menggunakan data DTKS, dan Bappeda menggunakan indeks komposit sendiri. Hal ini menyebabkan angka kemiskinan yang dilaporkan berbeda signifikan dan menimbulkan kebingungan di kalangan pengambil kebijakan. Pimpinan meminta Anda menjadi koordinator penyelesaian masalah ini.`,
+    questions: [
+      "Identifikasi akar masalah dan mengapa perbedaan ini bisa terjadi secara sistematis.",
+      "Rancang strategi harmonisasi yang realistis dengan mempertimbangkan kepentingan setiap instansi.",
+      "Bagaimana Anda membangun konsensus tanpa mengabaikan kebutuhan masing-masing instansi?",
+      "Usulan mekanisme jangka panjang agar masalah serupa tidak terulang."
+    ],
+    template: `IDENTIFIKASI MASALAH:
+Masalah utama adalah inkonsistensi definisi operasional antar instansi yang mengakibatkan data kemiskinan tidak dapat dibandingkan dan mengaburkan dasar pengambilan kebijakan. Ini bukan masalah teknis semata, melainkan masalah tata kelola statistik sektoral yang sistematis.
+
+ANALISIS PENYEBAB:
+Akar masalah: tidak adanya forum koordinasi statistik yang mengikat dan berulang antar instansi di tingkat daerah. Faktor pendorong: (1) masing-masing instansi memiliki mandat dan kepentingan pelaporan berbeda, (2) Satu Data Indonesia belum terimplementasi sepenuhnya di level kabupaten/kota, (3) tidak ada sanksi atau insentif untuk harmonisasi.
+
+USULAN SOLUSI:
+Saya akan mengusulkan pendekatan berbasis konsensus bertahap: pertama, dokumentasi dan visualisasi perbedaan yang ada secara transparan untuk semua pihak; kedua, fasilitasi forum teknis yang memisahkan "data untuk kebijakan" dari "data untuk manajemen internal instansi"; ketiga, penyusunan kamus data bersama yang mengakomodasi kebutuhan masing-masing.
+
+RENCANA IMPLEMENTASI:
+Minggu 1: Menyusun matriks perbedaan definisi secara tertulis dan mengundang perwakilan teknis tiga instansi. Minggu 2-3: Workshop harmonisasi dengan fasilitator netral. Minggu 4: Penyusunan draft kesepakatan bersama. Bulan 2: Piloting penggunaan definisi yang disepakati pada laporan berikutnya.
+
+ANTISIPASI RISIKO:
+Ego sektoral dan resistensi dari instansi yang merasa definisinya lebih akurat. Mitigasi: posisikan harmonisasi bukan sebagai "siapa yang benar" tetapi sebagai "bagaimana menghasilkan data yang berguna untuk semua". Libatkan Bappeda sebagai pihak pemakai data agar ada tekanan dari sisi permintaan.
+
+INDIKATOR KEBERHASILAN:
+Satu dokumen kamus data bersama yang ditandatangani ketiga instansi. Profil pembangunan daerah berikutnya menggunakan satu definisi yang sama. Forum koordinasi statistik terbentuk dan berjadwal minimal triwulanan.`,
+    keywords: ["definisi", "metodologi", "berbeda", "inkonsistensi", "akar masalah", "sistematis", "kepentingan", "standar", "harmonisasi", "konsensus", "koordinasi", "mediasi", "forum", "pertemuan", "mekanisme", "kesepakatan", "resistensi", "ego sektoral", "konsistensi", "akuntabilitas", "satu data", "kamus"]
+  },
+  {
+    id: "cs3",
+    title: "Kasus 3 – Insiden Publikasi Data Keliru",
+    category: "📢 Manajemen Krisis & Komunikasi",
+    duration: "45 menit",
+    background: `Sebuah tabel dalam publikasi BPS yang telah dirilis dua hari lalu mengandung kesalahan entri yang menyebabkan angka PDRB per kapita salah satu kabupaten terlalu tinggi sekitar 30%. Beberapa media daerah dan nasional sudah mengutip data ini. Seorang analis dari universitas lokal pertama kali mengingatkan kesalahan ini melalui media sosial. Saat ini publik belum terlalu ramai membicarakan, tetapi ada potensi menjadi viral. Anda adalah koordinator tim publikasi.`,
+    questions: [
+      "Apa langkah pertama yang harus segera diambil dalam 2 jam pertama setelah mengetahui masalah ini?",
+      "Bagaimana strategi komunikasi kepada publik, media, dan pemangku kepentingan internal?",
+      "Rancang mekanisme koreksi yang profesional dan menjaga kepercayaan publik.",
+      "Apa perubahan prosedur yang perlu dilakukan agar insiden serupa tidak terulang?"
+    ],
+    template: `IDENTIFIKASI MASALAH:
+Masalah utama adalah insiden kualitas data yang sudah sampai ke publik dan berpotensi mencoreng kepercayaan terhadap statistik BPS. Komponen kritis: (1) media sudah mengutip data salah, (2) ada tekanan waktu untuk koreksi sebelum isu menjadi viral, (3) reputasi institusi dan kredibilitas data statistik nasional dipertaruhkan.
+
+ANALISIS PENYEBAB:
+Sumber kesalahan perlu segera ditelusuri: apakah di level entri, pengolahan, atau pengecekan akhir. Kelemahan sistemik yang teridentifikasi: proses QC tidak memiliki verifikasi silang otomatis untuk nilai ekstrem (outlier), dan tidak ada mekanisme review final sebelum penerbitan di website.
+
+USULAN SOLUSI:
+Strategi dua jalur: (1) Koreksi data segera dan transparan dengan errata resmi, (2) Komunikasi krisis yang proaktif kepada media dan publik. Saya tidak akan menunggu — respons cepat dan jujur lebih baik daripada menunggu tekanan media meningkat.
+
+RENCANA IMPLEMENTASI:
+Jam 1-2: Verifikasi internal untuk memastikan kesalahan dan luasannya. Siapkan draft errata. Jam 2-4: Koordinasi dengan pimpinan dan bagian humas untuk menyepakati narasi komunikasi. Jam 4-6: Publikasikan errata di website, kirim siaran pers ke media yang mengutip, dan posting klarifikasi di media sosial BPS. Hari 2: Follow-up ke media untuk memastikan koreksi sudah tersampaikan.
+
+ANTISIPASI RISIKO:
+Risiko: media mengangkat "BPS salah" menjadi headline negatif. Mitigasi: framing komunikasi pada "integritas dan transparansi BPS dalam merespons temuan" — bukan defensif. Risiko kedua: tim internal merasa disalahkan. Mitigasi: fokus pada perbaikan sistem, bukan mencari kambing hitam.
+
+INDIKATOR KEBERHASILAN:
+Errata terbit dalam 24 jam. Semua media yang mengutip data salah telah menerbitkan koreksi. Tidak ada narasi negatif berkelanjutan di hari ke-3. SOP pengecekan akhir diperbarui dengan mekanisme deteksi outlier dalam 14 hari.`,
+    keywords: ["kesalahan", "insiden", "media", "publik", "kepercayaan", "urgensi", "penyebab", "proses", "QC", "entri", "validasi", "SOP", "koreksi", "transparansi", "komunikasi", "errata", "segera", "langkah", "siaran pers", "koordinasi", "viral", "reputasi", "prosedur", "lesson learned", "humas"]
+  },
+  {
+    id: "cs4",
+    title: "Kasus 4 – Resistensi Digitalisasi Pengumpulan Data",
+    category: "🔄 Manajemen Perubahan & Teknologi",
+    duration: "45 menit",
+    background: `BPS Kabupaten Y akan beralih dari kuesioner kertas ke CAPI (Computer-Assisted Personal Interviewing) untuk survei pertanian tahunan yang melibatkan 45 petugas lapangan. Pelatihan dasar sudah dilakukan, tetapi 60% petugas menyatakan belum siap dan meminta kembali ke sistem manual. Sebagian alasannya adalah infrastruktur jaringan yang lemah di wilayah terpencil, sebagian lagi adalah ketidaknyamanan dengan teknologi. Jadwal pengumpulan data tinggal 3 minggu lagi dan tidak bisa diundur.`,
+    questions: [
+      "Identifikasi jenis dan sumber resistensi yang dihadapi dan mana yang paling kritis.",
+      "Rancang strategi untuk memastikan implementasi CAPI berjalan dalam 3 minggu.",
+      "Bagaimana Anda mengelola ekspektasi dan memotivasi petugas yang masih ragu?",
+      "Usulan pendekatan jangka panjang untuk meningkatkan kapasitas digital petugas lapangan."
+    ],
+    template: `IDENTIFIKASI MASALAH:
+Masalah utama adalah ancaman kegagalan implementasi CAPI dalam tenggat ketat akibat resistensi yang meluas (60% petugas). Resistensi ini bersifat ganda: teknis (infrastruktur jaringan lemah) dan non-teknis (ketidaknyamanan psikologis terhadap perubahan). Keduanya memerlukan pendekatan berbeda.
+
+ANALISIS PENYEBAB:
+Resistensi teknis: wilayah terpencil memiliki konektivitas tidak stabil yang memunculkan kekhawatiran nyata tentang kehilangan data. Resistensi non-teknis: petugas merasa pelatihan dasar belum cukup, tidak ada waktu praktik mandiri sebelum survei nyata, dan tidak ada sistem peer support. Akar masalah: desain implementasi tidak memperhitungkan keragaman kesiapan petugas.
+
+USULAN SOLUSI:
+Strategi tiga lapis: (1) solusi teknis untuk wilayah tanpa jaringan (mode offline CAPI + sinkronisasi berkala), (2) sistem buddy/mentor: petugas yang sudah mahir mendampingi yang belum, (3) sesi latihan terfokus selama 3 hari dengan simulasi kondisi lapangan nyata. Tidak ada opsi kembali ke manual — ini akan menciptakan preseden negatif dan inkonsistensi data.
+
+RENCANA IMPLEMENTASI:
+Minggu 1: Pemetaan cepat 45 petugas ke dalam tiga kategori kesiapan (mahir, sedang, belum siap). Hari 1-3: Pelatihan intensif khusus kelompok belum siap dengan simulasi kasus nyata. Hari 4-7: Uji coba lapangan terbatas dengan pendampingan. Minggu 2-3: Implementasi penuh dengan sistem pelaporan harian dan helpdesk.
+
+ANTISIPASI RISIKO:
+Risiko utama: kehilangan data di wilayah tanpa jaringan. Mitigasi: konfirmasi fitur offline CAPI aktif di semua perangkat sebelum turun lapangan. Risiko kedua: petugas berbohong tentang kesiapan karena tekanan. Mitigasi: buat suasana aman untuk mengakui kesulitan, tanpa konsekuensi penilaian.
+
+INDIKATOR KEBERHASILAN:
+100% data berhasil terkumpul menggunakan CAPI. Tingkat kesalahan entri tidak lebih tinggi dari survei manual sebelumnya. Kurang dari 5% data yang perlu diinput ulang. Petugas melaporkan tingkat kepercayaan diri yang lebih tinggi pada akhir survei.`,
+    keywords: ["resistensi", "hambatan", "infrastruktur", "kapasitas", "kesiapan", "teknologi", "teknis", "non-teknis", "wilayah", "jaringan", "kompetensi", "pendampingan", "pelatihan", "offline", "buddy", "jadwal", "prioritas", "supervisi", "monitoring", "tahap", "kegagalan", "data", "moral", "kapasitas jangka panjang", "CAPI", "offline mode"]
+  },
+  {
+    id: "cs5",
+    title: "Kasus 5 – Permintaan Akses Data Mikro Sensitif",
+    category: "⚖️ Etika Data & Integritas Layanan",
+    duration: "45 menit",
+    background: `Sebuah lembaga penelitian swasta mengajukan permintaan resmi untuk mengakses data mikro survei sosial ekonomi yang belum dipublikasi. Mereka mengklaim membutuhkan data ini untuk penelitian kebijakan yang akan disampaikan dalam forum nasional bulan depan. Bersamaan dengan itu, ada komunikasi informal dari seorang pejabat daerah yang meminta Anda "membantu mempercepat proses" akses data tersebut. Regulasi akses data mikro cukup ketat dan proses normal membutuhkan 2–3 bulan. Anda adalah Kepala Seksi Layanan Statistik.`,
+    questions: [
+      "Identifikasi dimensi masalah dalam kasus ini: teknis, etis, dan politis.",
+      "Bagaimana Anda menangani permintaan resmi lembaga penelitian sesuai prosedur yang berlaku?",
+      "Bagaimana Anda merespons tekanan informal dari pejabat daerah dengan tetap menjaga integritas?",
+      "Usulan mekanisme yang membuat layanan data mikro lebih responsif tanpa melanggar regulasi."
+    ],
+    template: `IDENTIFIKASI MASALAH:
+Kasus ini memiliki tiga dimensi yang harus dikelola sekaligus: (1) teknis — permintaan data mikro yang prosesnya panjang vs. tenggat penelitian yang dekat, (2) etis — integritas dan kerahasiaan data responden, (3) politis — tekanan informal dari pejabat yang berpotensi menciptakan konflik kepentingan.
+
+ANALISIS PENYEBAB:
+Masalah mendasar adalah tidak adanya mekanisme fast-track yang sah untuk penelitian kebijakan yang memiliki urgensi tinggi. Celah ini membuka ruang tekanan informal. Faktor lain: komunikasi informal pejabat adalah pelanggaran protokol tata kelola yang perlu direspons dengan hati-hati namun tegas.
+
+USULAN SOLUSI:
+Dua jalur yang berjalan paralel: (1) Proses permintaan resmi dilanjutkan sesuai regulasi yang berlaku tanpa pengecualian. Saya akan membantu lembaga penelitian memahami regulasi dan mempercepat kelengkapan administrasi dari sisi mereka. (2) Tekanan informal direspons melalui saluran formal — saya akan melaporkan komunikasi ini kepada atasan sebagai tindakan perlindungan diri dan transparansi institusi.
+
+RENCANA IMPLEMENTASI:
+Hari 1: Balas permintaan resmi lembaga dengan panduan persyaratan lengkap dan timeline yang realistis. Hari 2: Sampaikan kepada atasan tentang komunikasi informal pejabat, dokumentasikan secara tertulis. Minggu 2-4: Fasilitasi proses pengajuan secara maksimal sesuai kewenangan yang ada — terutama verifikasi kelengkapan dokumen secepat mungkin. Jika ada layanan data agregat yang memenuhi kebutuhan penelitian, tawarkan sebagai alternatif.
+
+ANTISIPASI RISIKO:
+Risiko terbesar: tekanan pejabat menguat jika diabaikan. Mitigasi: respons formal yang sopan, terdokumentasi, dan merujuk pada regulasi — bukan penolakan personal. Risiko kedua: lembaga penelitian kecewa dan mempersoalkan prosedur BPS. Mitigasi: komunikasi transparan tentang alasan dan timeline dari awal.
+
+INDIKATOR KEBERHASILAN:
+Proses permintaan berjalan sesuai regulasi tanpa intervensi luar. Tidak ada data yang diakses di luar prosedur resmi. Atasan telah mendapatkan informasi tentang tekanan informal. Evaluasi terhadap kemungkinan layanan fast-track yang sah untuk kategori penelitian kebijakan publik.`,
+    keywords: ["etika", "integritas", "regulasi", "tekanan", "sensitif", "prosedur", "dimensi", "teknis", "politis", "risiko", "kepentingan", "transparansi", "komunikasi", "formal", "SOP", "konflik kepentingan", "penyalahgunaan", "reputasi", "hukum", "kepercayaan", "tata kelola", "akuntabilitas"]
+  }
+];
+// ==============================================================
+
+
 const essayPrompts = [
   {
     title: "PE 1 – Integritas: Situasi Bertentangan dengan Nilai & Etika Organisasi",
@@ -550,7 +710,236 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+// ===================== SIMULASI ANALISIS KASUS =====================
+
+const caseScenarioSelect = document.querySelector("#caseScenarioSelect");
+const caseBackground = document.querySelector("#caseBackground");
+const caseQuestionsList = document.querySelector("#caseQuestionsList");
+const caseEssayAnswer = document.querySelector("#caseEssayAnswer");
+const caseWordCount = document.querySelector("#caseWordCount");
+const caseChecklist = document.querySelector("#caseChecklist");
+const caseChecklistItems = document.querySelector("#caseChecklistItems");
+const caseFeedbackText = document.querySelector("#caseFeedbackText");
+const caseScore = document.querySelector("#caseScore");
+const caseCategoryBadge = document.querySelector("#caseCategoryBadge");
+const caseDurationBadge = document.querySelector("#caseDurationBadge");
+const aiFeedbackResult = document.querySelector("#aiFeedbackResult");
+const aiFeedbackContent = document.querySelector("#aiFeedbackContent");
+const aiFeedbackLoading = document.querySelector("#aiFeedbackLoading");
+
+function renderCaseScenario() {
+  if (!caseScenarioSelect) return;
+  const scenario = caseScenarios[caseScenarioSelect.selectedIndex];
+  if (!scenario) return;
+
+  caseCategoryBadge.textContent = scenario.category;
+  caseDurationBadge.textContent = `⏱ ${scenario.duration}`;
+  caseBackground.innerHTML = `<strong>Latar Belakang Kasus:</strong><br/><br/>${scenario.background}`;
+
+  caseQuestionsList.innerHTML = "";
+  scenario.questions.forEach((q) => {
+    const li = document.createElement("li");
+    li.textContent = q;
+    caseQuestionsList.appendChild(li);
+  });
+
+  caseEssayAnswer.value = "";
+  caseWordCount.textContent = "0 kata";
+  caseChecklist.style.display = "none";
+  aiFeedbackResult.style.display = "none";
+  aiFeedbackLoading.style.display = "none";
+}
+
+function analyzeCaseEssay() {
+  const text = caseEssayAnswer.value.trim();
+  const normalized = text.toLowerCase();
+  const wordCount = text.split(/\s+/).filter(Boolean).length;
+  const scenario = caseScenarios[caseScenarioSelect.selectedIndex];
+
+  const checks = [
+    {
+      label: "Identifikasi masalah utama secara spesifik.",
+      passed: /identifikasi|masalah utama|inti masalah|permasalahan|masalah yang/.test(normalized),
+    },
+    {
+      label: "Analisis penyebab atau akar masalah.",
+      passed: /penyebab|akar masalah|faktor|mengapa|sistemik|latar belakang/.test(normalized),
+    },
+    {
+      label: "Usulan solusi yang konkret dan beralasan.",
+      passed: /solusi|langkah yang saya|usulan|strategi|rencana|saya akan|saya mengambil/.test(normalized),
+    },
+    {
+      label: "Rencana implementasi dengan tahapan yang jelas.",
+      passed: /implementasi|tahap|rencana|jadwal|minggu|hari ke|langkah \d|prioritas/.test(normalized),
+    },
+    {
+      label: "Antisipasi risiko dan rencana mitigasinya.",
+      passed: /risiko|mitigasi|antisipasi|kendala|hambatan|dampak negatif|konsekuensi/.test(normalized),
+    },
+    {
+      label: "Indikator keberhasilan yang terukur.",
+      passed: /indikator|keberhasilan|terukur|target|%|hasil akhir|dampak yang diharapkan/.test(normalized),
+    },
+    {
+      label: "Mempertimbangkan pemangku kepentingan atau lintas unit.",
+      passed: /pemangku kepentingan|stakeholder|pimpinan|tim|instansi|lintas|koordinasi|pihak/.test(normalized),
+    },
+    {
+      label: "Jawaban cukup komprehensif (min. 200 kata).",
+      passed: wordCount >= 200,
+    },
+  ];
+
+  const passedCount = checks.filter((c) => c.passed).length;
+  const scoreVal = Math.round((passedCount / checks.length) * 100);
+
+  caseScore.textContent = `${scoreVal}%`;
+  caseChecklistItems.innerHTML = "";
+  checks.forEach((c) => {
+    const li = document.createElement("li");
+    li.className = c.passed ? "ready" : "missing";
+    li.textContent = `${c.passed ? "✓ Sudah ada" : "○ Perlu ditambahkan"}: ${c.label}`;
+    caseChecklistItems.appendChild(li);
+  });
+
+  const missingItems = checks.filter((c) => !c.passed).map((c) => c.label.toLowerCase());
+  if (missingItems.length === 0) {
+    caseFeedbackText.innerHTML = `<strong>Jawaban Anda sudah sangat lengkap!</strong> Pastikan setiap bagian ditulis dengan contoh konkret dan angka terukur — bukan hanya pola kalimat. Langkah berikutnya: latih penyampaian lisan dalam 3 menit.`;
+  } else if (scoreVal >= 75) {
+    caseFeedbackText.innerHTML = `Jawaban sudah kuat di sebagian besar dimensi. Perlu diperkuat pada: <strong>${missingItems.join(", ")}</strong>. Fokus pada penajaman bagian yang masih normatif.`;
+  } else if (scoreVal >= 50) {
+    caseFeedbackText.innerHTML = `Dasar analisis sudah ada, tetapi masih perlu dikembangkan pada: <strong>${missingItems.join(", ")}</strong>. Coba gunakan kerangka 6 blok: Masalah → Penyebab → Solusi → Implementasi → Risiko → Indikator.`;
+  } else {
+    caseFeedbackText.innerHTML = `Jawaban masih perlu pengembangan signifikan. Area yang belum terisi: <strong>${missingItems.join(", ")}</strong>. Mulailah dengan kerangka singkat sebelum menulis panjang.`;
+  }
+
+  caseChecklist.style.display = "block";
+  aiFeedbackResult.style.display = "none";
+}
+
+async function getAIFeedback() {
+  const apiKey = document.querySelector("#groqApiKey").value.trim();
+  const text = caseEssayAnswer.value.trim();
+  const scenario = caseScenarios[caseScenarioSelect.selectedIndex];
+
+  if (!apiKey) {
+    alert("Masukkan Groq API Key terlebih dahulu.");
+    return;
+  }
+  if (!text || text.split(/\s+/).filter(Boolean).length < 50) {
+    alert("Tulis jawaban analisis terlebih dahulu (minimal 50 kata) sebelum meminta umpan balik AI.");
+    return;
+  }
+
+  aiFeedbackLoading.style.display = "block";
+  aiFeedbackResult.style.display = "none";
+
+  const systemPrompt = `Anda adalah asesor senior mansoskul (manajemen sosio-kultural) BPS yang berpengalaman mengevaluasi jawaban analisis kasus esai kandidat promosi ke Jabatan Fungsional Madya. Tugas Anda memberikan umpan balik yang konstruktif, spesifik, dan kontekstual terhadap BPS.
+
+Evaluasi jawaban dengan memperhatikan:
+1. Ketajaman identifikasi masalah (apakah masalah utama dirumuskan dengan presisi?)
+2. Kedalaman analisis penyebab (apakah menyentuh akar masalah sistemik?)
+3. Kualitas solusi (konkret, realistis, beralasan, bukan normatif?)
+4. Kelayakan rencana implementasi (apakah mempertimbangkan sumber daya dan risiko?)
+5. Antisipasi risiko (apakah ada mitigasi yang realistis?)
+6. Indikator keberhasilan (apakah terukur dan relevan?)
+7. Perspektif level Madya (apakah menunjukkan kepemimpinan strategis, bukan hanya operasional?)
+
+Format respons dalam bahasa Indonesia yang profesional:
+- Kekuatan Utama (2-3 poin spesifik)
+- Area yang Perlu Diperkuat (2-3 poin dengan saran konkret)
+- Satu Kalimat Pesan Kunci untuk kandidat`;
+
+  const userPrompt = `SKENARIO KASUS: ${scenario.title}
+LATAR BELAKANG: ${scenario.background}
+PERTANYAAN: ${scenario.questions.join(" | ")}
+
+JAWABAN KANDIDAT:
+${text}
+
+Berikan umpan balik yang spesifik dan kontekstual.`;
+
+  try {
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${apiKey}`
+      },
+      body: JSON.stringify({
+        model: "llama-3.3-70b-versatile",
+        max_tokens: 800,
+        temperature: 0.4,
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: userPrompt }
+        ]
+      })
+    });
+
+    const data = await response.json();
+
+    if (data.error) {
+      aiFeedbackContent.innerHTML = `<strong>Error:</strong> ${data.error.message}. Periksa kembali API Key Anda.`;
+    } else {
+      const aiText = data.choices?.[0]?.message?.content || "Tidak ada respons dari AI.";
+      aiFeedbackContent.innerHTML = aiText.replace(/\n/g, "<br/>");
+    }
+
+    aiFeedbackResult.style.display = "block";
+  } catch (err) {
+    aiFeedbackContent.innerHTML = `<strong>Gagal terhubung ke Groq API.</strong> Periksa koneksi internet dan validitas API Key.`;
+    aiFeedbackResult.style.display = "block";
+  } finally {
+    aiFeedbackLoading.style.display = "none";
+  }
+}
+
+function setupCaseSimulation() {
+  if (!caseScenarioSelect) return;
+
+  caseScenarios.forEach((scenario) => {
+    const option = document.createElement("option");
+    option.value = scenario.id;
+    option.textContent = scenario.title;
+    caseScenarioSelect.appendChild(option);
+  });
+
+  renderCaseScenario();
+
+  caseScenarioSelect.addEventListener("change", renderCaseScenario);
+
+  caseEssayAnswer.addEventListener("input", () => {
+    const words = caseEssayAnswer.value.trim().split(/\s+/).filter(Boolean).length;
+    const color = words >= 300 ? "var(--primary)" : words >= 150 ? "var(--sun)" : "var(--muted)";
+    caseWordCount.textContent = `${words} kata`;
+    caseWordCount.style.color = color;
+  });
+
+  document.querySelector("#analyzeCaseEssay")?.addEventListener("click", analyzeCaseEssay);
+
+  document.querySelector("#loadCaseTemplate")?.addEventListener("click", () => {
+    const scenario = caseScenarios[caseScenarioSelect.selectedIndex];
+    caseEssayAnswer.value = scenario.template;
+    caseEssayAnswer.dispatchEvent(new Event("input"));
+    analyzeCaseEssay();
+  });
+
+  document.querySelector("#resetCaseEssay")?.addEventListener("click", () => {
+    caseEssayAnswer.value = "";
+    caseWordCount.textContent = "0 kata";
+    caseChecklist.style.display = "none";
+    aiFeedbackResult.style.display = "none";
+  });
+
+  document.querySelector("#getAIFeedback")?.addEventListener("click", getAIFeedback);
+}
+
+// ==============================================================
+
 setupEssayPromptOptions();
+setupCaseSimulation();
 renderEssayChecklist([
   { label: "Ada konteks situasi yang jelas.", passed: false },
   { label: "Ada peran atau tanggung jawab pribadi.", passed: false },
